@@ -27,19 +27,12 @@ const ContextProvider = (props) => {
     setLoading(true);
     setShowResult(true);
 
-    // Determine the prompt to use
     const selectedPrompt = prompt !== undefined ? prompt : input;
-
-    // Update recentPrompt with the selected prompt
     setRecentPrompt(selectedPrompt);
-
-    // Add the selected prompt to prevPrompts
     setPrevPrompts((prev) => [...prev, selectedPrompt]);
 
-    // Run the chat with the selected prompt
     const response = await runChat(selectedPrompt);
 
-    // Process the response and update state
     let responseArray = response.split("**");
     let newResponse = "";
 
