@@ -5,6 +5,7 @@ Gemini Clone is a project aimed at emulating the capabilities of Gemini, utilizi
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Demo](#demo)
 - [Features](#features)
   - [Core Features](#core-features)
   - [Additional Features](#additional-features)
@@ -15,6 +16,10 @@ Gemini Clone is a project aimed at emulating the capabilities of Gemini, utilizi
 ## Introduction
 
 Gemini Clone introduces a React-based web application that replicates the functionality of the Google Gemini AI chatbot. It provides users with an intuitive interface to interact with the Gemini model, enabling them to ask questions and receive informative responses in a conversational manner.
+
+## Demo
+
+https://gemini-clone-liart.vercel.app/
 
 ![Gemini-clone](Gemini-clone.png)
 ![Result](sidebar.png)
