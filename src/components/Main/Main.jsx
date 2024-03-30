@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Main.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
+import { Tooltip } from "@mui/material";
 
 const Main = () => {
   const {
@@ -86,8 +87,13 @@ const Main = () => {
               placeholder="Enter a prompt here"
             />
             <div>
-              <img src={assets.gallery_icon} alt="" />
-              <img src={assets.mic_icon} alt="" />
+              <Tooltip title="Upload Image">
+                <img src={assets.gallery_icon} alt="" />
+              </Tooltip>
+              <Tooltip title="Use Microphone">
+                <img src={assets.mic_icon} alt="" />
+              </Tooltip>
+
               {input ? (
                 <img onClick={() => onSent} src={assets.send_icon} alt="" />
               ) : null}

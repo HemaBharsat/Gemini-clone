@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
+import { Tooltip } from "@mui/material";
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
@@ -15,15 +16,19 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <img
-          onClick={() => setExtended((prev) => !prev)}
-          className="menu"
-          src={assets.menu_icon}
-          alt=""
-        />
+        <Tooltip title="Expand Menu">
+          <img
+            onClick={() => setExtended((prev) => !prev)}
+            className="menu"
+            src={assets.menu_icon}
+            alt=""
+          />
+        </Tooltip>
         <div onClick={() => newChat()} className="new-chat">
-          <img src={assets.plus_icon} alt="" />
-          {extended ? <p>New Chat</p> : null}
+          <Tooltip title="New Chat">
+            <img src={assets.plus_icon} alt="" />
+            {extended ? <p>New Chat</p> : null}
+          </Tooltip>
         </div>
         {extended ? (
           <div className="recent">
@@ -41,16 +46,22 @@ const Sidebar = () => {
       </div>
       <div className="bottom">
         <div className="bottom-item recent-entry">
-          <img src={assets.question_icon} alt="" />
-          {extended ? <p>Help</p> : null}
+          <Tooltip title="Help">
+            <img src={assets.question_icon} alt="" />
+            {extended ? <p>Help</p> : null}
+          </Tooltip>
         </div>
         <div className="bottom-item recent-entry">
-          <img src={assets.history_icon} alt="" />
-          {extended ? <p>Activity</p> : null}
+          <Tooltip title="History">
+            <img src={assets.history_icon} alt="" />
+            {extended ? <p>Activity</p> : null}
+          </Tooltip>
         </div>
         <div className="bottom-item recent-entry">
-          <img src={assets.setting_icon} alt="" />
-          {extended ? <p>Setting</p> : null}
+          <Tooltip title="Settings">
+            <img src={assets.setting_icon} alt="" />
+            {extended ? <p>Setting</p> : null}
+          </Tooltip>
         </div>
       </div>
     </div>
